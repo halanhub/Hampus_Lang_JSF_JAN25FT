@@ -1,0 +1,11 @@
+.search-bar {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.search-bar input {
+  max-width: 24rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
