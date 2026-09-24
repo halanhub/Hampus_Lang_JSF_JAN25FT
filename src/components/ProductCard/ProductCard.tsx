@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { Product } from "../../types/product";
 import "./ProductCard.css";
 
@@ -12,7 +13,8 @@ function ProductCard({ product }: ProductCardProps) {
     ((product.price - product.discountedPrice) / product.price) * 100
   );
 
-  return (
+ return (
+  <Link to={`/product/${product.id}`} className="product-card-link">
     <div className="product-card">
       <div className="product-image-container">
         {hasDiscount && (
@@ -54,7 +56,7 @@ function ProductCard({ product }: ProductCardProps) {
         </div>
       </div>
     </div>
-  );
+  </Link>
+);
 }
-
 export default ProductCard;

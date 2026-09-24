@@ -63,3 +63,7 @@
 .price {
   font-weight: bold;
 }
+.product-card-link {
+  text-decoration: none;
+  color: inherit;
+}

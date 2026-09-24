@@ -1,9 +1,30 @@
+import { Link } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
 import "./Header.css";
 
-export function Header() {
+function Header() {
+  const { cartItems } = useCart();
+
+  const cartCount = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   return (
     <header className="header">
-      <h1>Online Shop</h1>
-    </header>
+    <div className="header-content">
+      <Link to="/" className="logo">
+        Online Shop
+      </Link>
+
+      <nav className="navigation">
+        <Link to="/">Home</Link>
+        <Link to="/contact">Contact</Link>
+        <Link to="/cart">Cart ({cartCount})</Link>
+      </nav>
+    </div>
+  </header>
   );
 }
+
+export default Header;

@@ -1,20 +1,44 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import type { Product } from "../../types/product";
 import "./SearchBar.css";
 
-type SearchBarProps = {
-  value: string;
-  onChange: (value: string) => void;
-};
+interface SearchBarProps {
+  products: Product[];
+}
 
-export function SearchBar({ value, onChange }: SearchBarProps) {
+function SearchBar({ products }: SearchBarProps) {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <label className="search-bar">
-      <span>Search products</span>
+    <div className="search-container">
       <input
-        type="search"
-        value={value}
-        onChange={(event) => onChange(event.target.value)}
-        placeholder="Search..."
+        type="text"
+        placeholder="Search products..."
+        className="search-input"
+        value={searchTerm}
+        onChange={(event) => setSearchTerm(event.target.value)}
       />
-    </label>
+
+      {searchTerm && (
+        <div className="search-results">
+          {filteredProducts.map((product) => (
+            <Link
+              key={product.id}
+              to={`/product/${product.id}`}
+              className="search-result"
+            >
+              {product.title}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }
+
+export default SearchBar;
