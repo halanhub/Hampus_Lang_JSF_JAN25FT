@@ -1,0 +1,51 @@
+.hero {
+  background-color: #f3f3f3;
+  padding: 80px 20px;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-small-text {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.hero h1 {
+  max-width: 600px;
+  margin: 0 0 20px;
+  font-size: 48px;
+}
+
+.hero-description {
+  max-width: 550px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.hero-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  background-color: #222;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.hero-button:hover {
+  background-color: #444;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 50px 20px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+}

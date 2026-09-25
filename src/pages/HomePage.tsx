@@ -3,6 +3,7 @@ import { getProducts } from "../services/api";
 import type { Product } from "../types/product";
 import ProductCard from "../components/ProductCard/ProductCard";
 import SearchBar from "../components/SearchBar/SearchBar";
+import Hero from "../components/Hero/Hero";
 import "./HomePage.css";
 
 function HomePage() {
@@ -53,6 +54,8 @@ function HomePage() {
   }
 
   return (
+    <>
+    <Hero />
     <main className="home-page">
       <h1>Online Shop</h1>
       <SearchBar products={products} />
@@ -67,9 +70,7 @@ function HomePage() {
       <option value="rating">Rating</option>
     </select>
 
-  <div className="product-grid"></div>
-
-      <div className="product-grid">
+      <div className="product-grid" id="products">
         {sortedProducts.map((product) => (
           <ProductCard
             key={product.id}
@@ -78,7 +79,8 @@ function HomePage() {
         ))}
       </div>
     </main>
-  );
+      </>
+);
 }
 
 export default HomePage;

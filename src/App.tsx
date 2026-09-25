@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import { CartPage } from "./pages/CartPage";
 import { CheckoutSuccessPage } from "./pages/CheckoutSuccessPage";
 import { ContactPage } from "./pages/ContactPage";
+import Footer from "./components/Footer/Footer";
 function App() {
   return (
     <>
@@ -19,6 +20,7 @@ function App() {
       <Route path="/checkout-success" element={<CheckoutSuccessPage />}/>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
+    <Footer />
   </>
   );
 }

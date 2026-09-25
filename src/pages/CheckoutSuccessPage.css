@@ -1,0 +1,28 @@
+.checkout-success-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.checkout-success-page h1 {
+  margin-bottom: 20px;
+}
+
+.checkout-success-page p {
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.continue-shopping-link {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #222;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.continue-shopping-link:hover {
+  background-color: #444;
+}
