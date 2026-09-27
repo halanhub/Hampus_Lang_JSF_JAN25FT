@@ -22,8 +22,10 @@ export function ContactPage() {
     newErrors.push("Subject must be at least 3 characters.");
   }
 
-  if (!email.includes("@")) {
-    newErrors.push("Please enter a valid email address.");
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailPattern.test(email)) {
+  newErrors.push("Please enter a valid email address.");
   }
 
   if (message.trim().length < 10) {
@@ -59,7 +61,7 @@ export function ContactPage() {
           />
         </div>
 
-        <div>
+        <div className="form-group">
           <label htmlFor="subject">Subject</label>
 
           <input
@@ -70,7 +72,7 @@ export function ContactPage() {
           />
         </div>
 
-        <div>
+        <div className="form-group">
           <label htmlFor="email">Email</label>
 
           <input
@@ -81,7 +83,7 @@ export function ContactPage() {
           />
         </div>
 
-        <div>
+        <div className="form-group">
           <label htmlFor="message">Message</label>
 
           <textarea
@@ -96,15 +98,16 @@ export function ContactPage() {
         {errors.map((error) => (
        <p key={error}>{error}</p>
        ))}
-       {success && (
-  <p className="form-success">Thank you! Your message has been sent.</p>
-)}
       </div>
       
     )}
     
+      {success && (
+  <p className="form-success">Thank you! Your message has been sent.</p>
+)}
         <button className="submit-button" type="submit">Send Message</button>
       </form>
+      
     </main>
   );
 }

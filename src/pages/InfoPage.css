@@ -1,0 +1,35 @@
+.info-page {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 60px 20px 80px;
+}
+
+.info-page h1 {
+  margin: 0 0 30px;
+  font-size: 36px;
+}
+
+.info-page h2 {
+  margin: 35px 0 12px;
+  font-size: 24px;
+}
+
+.info-page p {
+  margin: 0 0 18px;
+  line-height: 1.7;
+  color: #444;
+}
+
+@media (max-width: 600px) {
+  .info-page {
+    padding: 40px 20px 60px;
+  }
+
+  .info-page h1 {
+    font-size: 30px;
+  }
+
+  .info-page h2 {
+    font-size: 21px;
+  }
+}

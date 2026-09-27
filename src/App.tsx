@@ -7,6 +7,9 @@ import { CartPage } from "./pages/CartPage";
 import { CheckoutSuccessPage } from "./pages/CheckoutSuccessPage";
 import { ContactPage } from "./pages/ContactPage";
 import Footer from "./components/Footer/Footer";
+import { AboutPage } from "./pages/AboutPage";
+import { TermsPage } from "./pages/TermsPage";
+import { PrivacyPage } from "./pages/PrivacyPage";
 function App() {
   return (
     <>
@@ -19,6 +22,10 @@ function App() {
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/checkout-success" element={<CheckoutSuccessPage />}/>
       <Route path="*" element={<NotFoundPage />} />
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/terms" element={<TermsPage />} />
+      <Route path="/privacy" element={<PrivacyPage />} />
+      
     </Routes>
     <Footer />
   </>

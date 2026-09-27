@@ -95,8 +95,10 @@ export function ProductPage() {
         </div>
       )}
 
-      <button className="add-to-cart-button" className="add-to-cart-button"
-  onClick={() => addToCart(product)}>
+      <button
+        className="add-to-cart-button"
+        onClick={() => addToCart(product)}
+      >
         Add to Cart
       </button>
     </div>

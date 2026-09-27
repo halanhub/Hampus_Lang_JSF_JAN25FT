@@ -1,50 +1,70 @@
 .contact-page {
   max-width: 700px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 6% 20px;
 }
 
 .contact-page h1 {
+  margin: 0 0 10px;
   margin-bottom: 30px;
 }
 
 .contact-form {
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .form-group label {
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
 }
 
 .form-group input,
 .form-group textarea {
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 16px;
+
+  background-color: #fff;
+  border: 1px solid #d5d5d5;
+  border-radius: 8px;
+
   font-family: inherit;
+  font-size: 16px;
+  color: #222;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input {
+  height: 50px;
 }
 
 .form-group textarea {
-  min-height: 150px;
+  min-height: 160px;
   resize: vertical;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #555;
+  border-color: #222;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
 }
 
 .form-errors {
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fff2f2;
   color: #b00020;
 }
 
@@ -53,20 +73,45 @@
 }
 
 .form-success {
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f0f8f2;
   color: #167a35;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .submit-button {
-  padding: 12px 20px;
-  font-size: 16px;
-  cursor: pointer;
+  align-self: flex-start;
+  min-width: 150px;
+  padding: 13px 24px;
+
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
+
+  background-color: #222;
+  color: #fff;
+
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #444;
 }
 
 @media (max-width: 600px) {
-  .contact-page {
-    padding: 25px 20px;
+ .contact-page {
+    padding: 40px 20px;
+  }
+
+  .contact-page h1 {
+    font-size: 30px;
+  }
+
+  .submit-button {
+    width: 100%;
   }
 }

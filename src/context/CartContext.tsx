@@ -11,9 +11,7 @@ interface CartContextType {
   decreaseQuantity: (productId: string) => void;
   clearCart: () => void;
 }
-function clearCart() {
-  setCartItems([]);
-}
+
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 interface CartProviderProps {
@@ -42,32 +40,46 @@ export function CartProvider({ children }: CartProviderProps) {
   }
 
   function removeFromCart(productId: string) {
-  setCartItems((currentItems) =>
-    currentItems.filter((item) => item.product.id !== productId)
-  );
-}
-function increaseQuantity(productId: string) {
-  setCartItems((currentItems) =>
-    currentItems.map((item) =>
-      item.product.id === productId
-        ? { ...item, quantity: item.quantity + 1 }
-        : item
-    )
-  );
-}
+    setCartItems((currentItems) =>
+      currentItems.filter((item) => item.product.id !== productId)
+    );
+  }
 
-function decreaseQuantity(productId: string) {
-  setCartItems((currentItems) =>
-    currentItems.map((item) =>
-      item.product.id === productId && item.quantity > 1
-        ? { ...item, quantity: item.quantity - 1 }
-        : item
-    )
-  );
-}
+  function increaseQuantity(productId: string) {
+    setCartItems((currentItems) =>
+      currentItems.map((item) =>
+        item.product.id === productId
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      )
+    );
+  }
+
+  function decreaseQuantity(productId: string) {
+    setCartItems((currentItems) =>
+      currentItems.map((item) =>
+        item.product.id === productId && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+    );
+  }
+
+  function clearCart() {
+    setCartItems([]);
+  }
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart,increaseQuantity,
-    decreaseQuantity,clearCart, }}>
+    <CartContext.Provider
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        increaseQuantity,
+        decreaseQuantity,
+        clearCart,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
